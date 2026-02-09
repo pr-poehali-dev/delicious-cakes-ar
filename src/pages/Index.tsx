@@ -171,81 +171,81 @@ const Index = () => {
                   
                   <TabsContent value="ingredients" className="space-y-4 mt-4">
                     <div className="space-y-3">
-                      <Label>Вкус коржей</Label>
+                      <Label>Cake Flavor</Label>
                       <select 
                         className="w-full p-2 border rounded-md"
                         value={cakeDesign.flavor}
                         onChange={(e) => setCakeDesign({...cakeDesign, flavor: e.target.value})}
                       >
-                        <option value="vanilla">Ваниль</option>
-                        <option value="chocolate">Шоколад</option>
-                        <option value="strawberry">Клубника</option>
-                        <option value="lemon">Лимон</option>
+                        <option value="vanilla">Vanilla</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="strawberry">Strawberry</option>
+                        <option value="lemon">Lemon</option>
                       </select>
                     </div>
                     
                     <div className="space-y-3">
-                      <Label>Начинка</Label>
+                      <Label>Filling</Label>
                       <select 
                         className="w-full p-2 border rounded-md"
                         value={cakeDesign.filling}
                         onChange={(e) => setCakeDesign({...cakeDesign, filling: e.target.value})}
                       >
-                        <option value="strawberry">Клубничная</option>
-                        <option value="chocolate">Шоколадная</option>
-                        <option value="caramel">Карамель</option>
-                        <option value="cream">Крем</option>
+                        <option value="strawberry">Strawberry</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="caramel">Caramel</option>
+                        <option value="cream">Cream</option>
                       </select>
                     </div>
 
                     <div className="space-y-3">
-                      <Label>Декор</Label>
+                      <Label>Decoration</Label>
                       <select 
                         className="w-full p-2 border rounded-md"
                         value={cakeDesign.decoration}
                         onChange={(e) => setCakeDesign({...cakeDesign, decoration: e.target.value})}
                       >
-                        <option value="flowers">Цветы</option>
-                        <option value="fruits">Фрукты</option>
-                        <option value="chocolate">Шоколадный</option>
-                        <option value="minimal">Минимализм</option>
+                        <option value="flowers">Flowers</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="minimal">Minimal</option>
                       </select>
                     </div>
                   </TabsContent>
                   
                   <TabsContent value="delivery" className="space-y-4 mt-4">
                     <div className="space-y-3">
-                      <Label>Дата доставки</Label>
+                      <Label>Delivery Date</Label>
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button variant="outline" className="w-full justify-start">
                             <Icon name="Calendar" size={16} />
                             <span className="ml-2">
-                              {date ? format(date, 'PPP', { locale: ru }) : 'Выберите дату'}
+                              {date ? format(date, 'PPP') : 'Select date'}
                             </span>
                           </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0">
-                          <Calendar mode="single" selected={date} onSelect={setDate} locale={ru} />
+                          <Calendar mode="single" selected={date} onSelect={setDate} />
                         </PopoverContent>
                       </Popover>
                     </div>
 
                     <div className="space-y-3">
-                      <Label>Адрес доставки</Label>
-                      <Input placeholder="Введите адрес" />
+                      <Label>Delivery Address</Label>
+                      <Input placeholder="Enter address" />
                     </div>
 
                     <div className="space-y-3">
-                      <Label>Комментарий</Label>
-                      <Textarea placeholder="Особые пожелания..." />
+                      <Label>Comments</Label>
+                      <Textarea placeholder="Special requests..." />
                     </div>
                   </TabsContent>
                 </Tabs>
 
                 <Button className="w-full mt-6" size="lg">
                   <Icon name="ShoppingBag" size={20} />
-                  <span className="ml-2">Заказать за 5500₽</span>
+                  <span className="ml-2">Order for $150</span>
                 </Button>
               </CardContent>
             </Card>
@@ -256,8 +256,8 @@ const Index = () => {
       <section id="catalog" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Каталог готовых тортов</h2>
-            <p className="text-xl text-muted-foreground">Выберите из нашей коллекции или создайте свой</p>
+            <h2 className="text-4xl font-bold mb-4">Ready-Made Cakes Catalog</h2>
+            <p className="text-xl text-muted-foreground">Choose from our collection or create your own</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -274,7 +274,7 @@ const Index = () => {
                   <span className="text-2xl font-bold text-primary">{cake.price}</span>
                   <Button>
                     <Icon name="ShoppingCart" size={16} />
-                    <span className="ml-2">В корзину</span>
+                    <span className="ml-2">Add to Cart</span>
                   </Button>
                 </CardFooter>
               </Card>
@@ -286,8 +286,8 @@ const Index = () => {
       <section id="ingredients" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Натуральные ингредиенты</h2>
-            <p className="text-xl text-muted-foreground">Только лучшие продукты для ваших тортов</p>
+            <h2 className="text-4xl font-bold mb-4">Natural Ingredients</h2>
+            <p className="text-xl text-muted-foreground">Only the best products for your cakes</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -295,7 +295,7 @@ const Index = () => {
               <Card key={index} className="text-center hover:shadow-lg transition-shadow animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader>
                   <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Icon name={ingredient.icon as any} size={32} className="text-primary" />
+                    <Icon name={ingredient.icon} size={32} className="text-primary" />
                   </div>
                   <CardTitle className="text-lg">{ingredient.name}</CardTitle>
                   <CardDescription>{ingredient.description}</CardDescription>
@@ -309,8 +309,8 @@ const Index = () => {
       <section id="reviews" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Отзывы клиентов</h2>
-            <p className="text-xl text-muted-foreground">Что говорят о нас наши покупатели</p>
+            <h2 className="text-4xl font-bold mb-4">Customer Reviews</h2>
+            <p className="text-xl text-muted-foreground">What our customers say about us</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -337,32 +337,32 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <Card className="overflow-hidden">
             <CardHeader className="text-center">
-              <CardTitle className="text-3xl">Условия доставки</CardTitle>
-              <CardDescription className="text-lg">Быстро и аккуратно</CardDescription>
+              <CardTitle className="text-3xl">Delivery Terms</CardTitle>
+              <CardDescription className="text-lg">Fast and careful</CardDescription>
             </CardHeader>
             <CardContent className="grid md:grid-cols-3 gap-6 p-8">
               <div className="text-center">
                 <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                   <Icon name="Clock" size={32} className="text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Срок изготовления</h3>
-                <p className="text-sm text-muted-foreground">От 2 до 5 дней в зависимости от сложности</p>
+                <h3 className="font-semibold mb-2">Production Time</h3>
+                <p className="text-sm text-muted-foreground">2 to 5 days depending on complexity</p>
               </div>
               
               <div className="text-center">
                 <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                   <Icon name="Truck" size={32} className="text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Доставка</h3>
-                <p className="text-sm text-muted-foreground">Бесплатно по городу, точно в указанное время</p>
+                <h3 className="font-semibold mb-2">Delivery</h3>
+                <p className="text-sm text-muted-foreground">Free citywide, exactly on time</p>
               </div>
               
               <div className="text-center">
                 <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                   <Icon name="ShieldCheck" size={32} className="text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Гарантия</h3>
-                <p className="text-sm text-muted-foreground">100% качество или вернём деньги</p>
+                <h3 className="font-semibold mb-2">Guarantee</h3>
+                <p className="text-sm text-muted-foreground">100% quality or money back</p>
               </div>
             </CardContent>
           </Card>
@@ -371,14 +371,14 @@ const Index = () => {
 
       <section id="contacts" className="py-20 px-4">
         <div className="container mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold mb-4">Свяжитесь с нами</h2>
-          <p className="text-xl text-muted-foreground mb-8">Мы всегда рады ответить на ваши вопросы</p>
+          <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
+          <p className="text-xl text-muted-foreground mb-8">We're always happy to answer your questions</p>
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="pt-6 text-center">
                 <Icon name="Phone" size={32} className="mx-auto mb-3 text-primary" />
-                <p className="font-semibold">Телефон</p>
+                <p className="font-semibold">Phone</p>
                 <p className="text-sm text-muted-foreground">+7 (999) 123-45-67</p>
               </CardContent>
             </Card>
@@ -394,8 +394,8 @@ const Index = () => {
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="pt-6 text-center">
                 <Icon name="MapPin" size={32} className="mx-auto mb-3 text-primary" />
-                <p className="font-semibold">Адрес</p>
-                <p className="text-sm text-muted-foreground">г. Москва, ул. Сладкая, 10</p>
+                <p className="font-semibold">Address</p>
+                <p className="text-sm text-muted-foreground">Moscow, Sweet St., 10</p>
               </CardContent>
             </Card>
           </div>
@@ -408,7 +408,7 @@ const Index = () => {
             <span className="text-2xl">🎂</span>
             <span className="font-bold text-xl">Delicious Cakes</span>
           </div>
-          <p className="text-sm text-muted-foreground">© 2024 Delicious Cakes. Все права защищены.</p>
+          <p className="text-sm text-muted-foreground">© 2024 Delicious Cakes. All rights reserved.</p>
         </div>
       </footer>
     </div>
