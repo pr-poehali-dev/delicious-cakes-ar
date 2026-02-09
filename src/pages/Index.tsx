@@ -10,7 +10,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { format } from 'date-fns';
-import { ru } from 'date-fns/locale';
 
 const Index = () => {
   const [date, setDate] = useState<Date>();
@@ -24,38 +23,38 @@ const Index = () => {
   const cakes = [
     {
       id: 1,
-      name: 'Розовая мечта',
-      price: '3500₽',
+      name: 'Pink Dream',
+      price: '$95',
       image: 'https://cdn.poehali.dev/projects/bb8f19ec-744a-4fc2-957e-844726a17ab1/files/a150dfa0-e7e3-4745-83dc-bcc3bfcb5ecf.jpg',
-      description: 'Нежный торт с розовым кремом и цветами'
+      description: 'Delicate cake with pink cream and flowers'
     },
     {
       id: 2,
-      name: 'Шоколадное наслаждение',
-      price: '4200₽',
+      name: 'Chocolate Delight',
+      price: '$115',
       image: 'https://cdn.poehali.dev/projects/bb8f19ec-744a-4fc2-957e-844726a17ab1/files/017de808-6362-47a6-a09f-a24447a1bc0c.jpg',
-      description: 'Многослойный шоколадный торт с кремом'
+      description: 'Multi-layered chocolate cake with cream'
     },
     {
       id: 3,
-      name: 'Свадебная элегантность',
-      price: '8500₽',
+      name: 'Wedding Elegance',
+      price: '$230',
       image: 'https://cdn.poehali.dev/projects/bb8f19ec-744a-4fc2-957e-844726a17ab1/files/bfdd6b0e-25da-4b68-86f4-732f07617868.jpg',
-      description: 'Трехъярусный торт с лавандовым декором'
+      description: 'Three-tier cake with lavender decor'
     }
   ];
 
   const ingredients = [
-    { name: 'Французская мука', icon: 'Wheat', description: 'Высшего сорта из Прованса' },
-    { name: 'Свежие яйца', icon: 'Egg', description: 'От местных фермеров' },
-    { name: 'Натуральное масло', icon: 'Milk', description: 'Органическое сливочное масло' },
-    { name: 'Бельгийский шоколад', icon: 'Cookie', description: 'Premium качество' }
+    { name: 'French Flour', icon: 'Wheat', description: 'Premium quality from Provence' },
+    { name: 'Fresh Eggs', icon: 'Egg', description: 'From local farmers' },
+    { name: 'Natural Butter', icon: 'Milk', description: 'Organic butter' },
+    { name: 'Belgian Chocolate', icon: 'Cookie', description: 'Premium quality' }
   ];
 
   const reviews = [
-    { name: 'Анна М.', text: 'Заказывала торт на день рождения дочери. Все гости в восторге! AR-конструктор помог создать идеальный дизайн.', rating: 5 },
-    { name: 'Дмитрий К.', text: 'Потрясающее качество! Торт был не только красивым, но и невероятно вкусным. Доставили точно в срок.', rating: 5 },
-    { name: 'Елена С.', text: 'Первый раз использовала AR для выбора торта - это просто волшебство! Результат превзошёл ожидания.', rating: 5 }
+    { name: 'Anna M.', text: 'Ordered a cake for my daughter\'s birthday. All guests were delighted! AR constructor helped create the perfect design.', rating: 5 },
+    { name: 'Dmitry K.', text: 'Amazing quality! The cake was not only beautiful but incredibly delicious. Delivered on time.', rating: 5 },
+    { name: 'Elena S.', text: 'First time using AR to choose a cake - it\'s pure magic! The result exceeded expectations.', rating: 5 }
   ];
 
   return (
@@ -68,15 +67,15 @@ const Index = () => {
               <h1 className="text-2xl font-bold text-primary">Delicious Cakes</h1>
             </div>
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#catalog" className="hover:text-primary transition-colors">Каталог</a>
-              <a href="#constructor" className="hover:text-primary transition-colors">AR Конструктор</a>
-              <a href="#ingredients" className="hover:text-primary transition-colors">Ингредиенты</a>
-              <a href="#reviews" className="hover:text-primary transition-colors">Отзывы</a>
-              <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
+              <a href="#catalog" className="hover:text-primary transition-colors">Catalog</a>
+              <a href="#constructor" className="hover:text-primary transition-colors">AR Constructor</a>
+              <a href="#ingredients" className="hover:text-primary transition-colors">Ingredients</a>
+              <a href="#reviews" className="hover:text-primary transition-colors">Reviews</a>
+              <a href="#contacts" className="hover:text-primary transition-colors">Contacts</a>
             </nav>
             <Button className="hidden md:flex">
               <Icon name="ShoppingCart" size={20} />
-              <span className="ml-2">Корзина</span>
+              <span className="ml-2">Cart</span>
             </Button>
           </div>
         </div>
@@ -86,19 +85,19 @@ const Index = () => {
         <div className="container mx-auto text-center relative z-10">
           <div className="animate-fade-in">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Создайте торт мечты
+              Create Your Dream Cake
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Используйте AR-технологии для создания уникального дизайна вашего торта
+              Use AR technology to create a unique design for your cake
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button size="lg" className="text-lg px-8 hover:scale-105 transition-transform">
                 <Icon name="Sparkles" size={24} />
-                <span className="ml-2">Начать создание</span>
+                <span className="ml-2">Start Creating</span>
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 hover:scale-105 transition-transform">
                 <Icon name="Eye" size={24} />
-                <span className="ml-2">Посмотреть каталог</span>
+                <span className="ml-2">View Catalog</span>
               </Button>
             </div>
           </div>
@@ -114,8 +113,8 @@ const Index = () => {
       <section id="constructor" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12 animate-slide-up">
-            <h2 className="text-4xl font-bold mb-4">AR Конструктор тортов</h2>
-            <p className="text-xl text-muted-foreground">Создайте свой уникальный дизайн в режиме реального времени</p>
+            <h2 className="text-4xl font-bold mb-4">AR Cake Constructor</h2>
+            <p className="text-xl text-muted-foreground">Create your unique design in real-time</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -123,7 +122,7 @@ const Index = () => {
               <CardHeader className="bg-gradient-to-br from-primary/20 to-secondary/20">
                 <CardTitle className="flex items-center gap-2">
                   <Icon name="Palette" size={24} />
-                  Дизайн торта
+                  Cake Design
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
@@ -131,7 +130,7 @@ const Index = () => {
                   <div className="text-center">
                     <div className="text-8xl mb-4">🎂</div>
                     <Badge variant="secondary" className="mb-2">AR Preview</Badge>
-                    <p className="text-sm text-muted-foreground">Наведите камеру для просмотра в реальном размере</p>
+                    <p className="text-sm text-muted-foreground">Point your camera to view in real size</p>
                   </div>
                   <div className="absolute top-4 right-4">
                     <Button size="sm" variant="outline">
@@ -142,7 +141,7 @@ const Index = () => {
                 
                 <div className="space-y-4">
                   <div>
-                    <Label>Количество ярусов: {cakeDesign.layers}</Label>
+                    <Label>Number of tiers: {cakeDesign.layers}</Label>
                     <input 
                       type="range" 
                       min="1" 
@@ -160,14 +159,14 @@ const Index = () => {
               <CardHeader className="bg-gradient-to-br from-accent/20 to-muted/20">
                 <CardTitle className="flex items-center gap-2">
                   <Icon name="ChefHat" size={24} />
-                  Состав и доставка
+                  Ingredients & Delivery
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
                 <Tabs defaultValue="ingredients" className="w-full">
                   <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="ingredients">Ингредиенты</TabsTrigger>
-                    <TabsTrigger value="delivery">Доставка</TabsTrigger>
+                    <TabsTrigger value="ingredients">Ingredients</TabsTrigger>
+                    <TabsTrigger value="delivery">Delivery</TabsTrigger>
                   </TabsList>
                   
                   <TabsContent value="ingredients" className="space-y-4 mt-4">
